@@ -1,24 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Header />
     <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#nav {
-  padding: 30px;
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Header from "@/components/header.vue";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+@Component({
+  components: {
+    Header,
+  },
+})
+export default class App extends Vue {}
+</script>

@@ -32,14 +32,16 @@ const usDollarSymbolMock: SymbolType = {
   USD: usDollarSymbolDetailMock,
 };
 
+const allSymbolsMock: SymbolType = {
+  ...euroSymbolMock,
+  ...kuwaitiDinarSymbolMock,
+  ...brazilianRealSymbolMock,
+  ...usDollarSymbolMock,
+};
+
 const sucessSymbolsResponseMock: Symbols = {
   success: true,
-  symbols: {
-    ...euroSymbolMock,
-    ...kuwaitiDinarSymbolMock,
-    ...brazilianRealSymbolMock,
-    ...usDollarSymbolMock,
-  },
+  symbols: allSymbolsMock,
 };
 
 export {
@@ -51,5 +53,6 @@ export {
   kuwaitiDinarSymbolMock,
   brazilianRealSymbolMock,
   usDollarSymbolMock,
+  allSymbolsMock,
   sucessSymbolsResponseMock,
 };
