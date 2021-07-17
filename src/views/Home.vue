@@ -1,27 +1,35 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container mx-auto">
+    <CurrencyConverter
+      v-if="symbols && currencyValue"
+      :symbols="symbols"
+      :currencyValue="currencyValue"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import CurrencyConverter from "@/components/currency-converter.vue";
 import { data } from "@/data";
+import { Latest, SymbolType } from "@/domain";
 
 @Component({
   components: {
-    HelloWorld,
+    CurrencyConverter,
   },
 })
 export default class Home extends Vue {
-  mounted(): void {
+  symbols: SymbolType | null = null;
+  currencyValue: Latest | null = null;
+
+  created(): void {
     data.getSymbols().then((r) => {
-      console.log("getSymbols", r);
+      this.symbols = r.data.symbols;
     });
 
     data.getLatest().then((r) => {
-      console.log("getLatest", r);
+      this.currencyValue = r.data;
     });
   }
 }
