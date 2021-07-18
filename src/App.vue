@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Header />
-    <router-view />
+    <main>
+      <div class="lg:container lg:mx-auto py-16 px-3">
+        <router-view />
+      </div>
+    </main>
   </div>
 </template>
 
