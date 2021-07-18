@@ -1,11 +1,11 @@
 <template>
   <div>
-    <select v-model="syncedSelectedSymbol">
+    <input class="mr-4 rounded" type="number" v-model="syncedAmount" />
+    <select class="rounded" v-model="syncedSelectedSymbol">
       <option v-for="item in symbols" :key="item.code" :value="item.code">
         {{ item.description }}
       </option>
     </select>
-    <input type="number" v-model="syncedAmount" />
   </div>
 </template>
 
