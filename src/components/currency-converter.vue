@@ -1,6 +1,7 @@
 <template>
   <div>
     <CurrencySelector
+      class="my-2"
       :amount="originAmount"
       :selectedSymbol="originSymbolCode"
       :symbols="symbols"
@@ -8,6 +9,7 @@
       @update:selectedSymbol="updateSymbolCodeAndConvert($event, 'origin')"
     />
     <CurrencySelector
+      class="my-2"
       :amount="destinationAmount"
       :selectedSymbol="destinationSymbolCode"
       :symbols="symbols"
