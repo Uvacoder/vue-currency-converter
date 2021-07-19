@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import CurrencyConverter from "@/components/currency-converter.vue";
-import { data } from "@/data";
+import { ExchangeRateHostAPI } from "@/data";
 import { Latest, SymbolType } from "@/domain";
 
 @Component({
@@ -24,11 +24,11 @@ export default class Home extends Vue {
   currencyValue: Latest | null = null;
 
   created(): void {
-    data.getSymbols().then((r) => {
+    ExchangeRateHostAPI.getSymbols().then((r) => {
       this.symbols = r.data.symbols;
     });
 
-    data.getLatest().then((r) => {
+    ExchangeRateHostAPI.getLatest().then((r) => {
       this.currencyValue = r.data;
     });
   }
