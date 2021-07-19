@@ -8,6 +8,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
+    "copy-index": "cp dist/index.html dist/404.html",
     "prepare": "husky install"
   },
   "dependencies": {

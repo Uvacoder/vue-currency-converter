@@ -34,6 +34,10 @@ jobs:
       - name: Test project
         run: |
           npm run test:unit
+
+      - name: Copy index to 404.html to prevent not found route
+        run: |
+          npm run copy-index
           
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
