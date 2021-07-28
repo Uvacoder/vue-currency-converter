@@ -1,3 +1,4 @@
+export * from "./graphql/index";
 export * from "./key-values";
 export * from "./latest";
 export * from "./latest.mock";

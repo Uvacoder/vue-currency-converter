@@ -8,6 +8,6 @@ export interface SymbolDetail {
 export type SymbolType = KeyValue<SymbolDetail>;
 
 export interface Symbols {
-  success: boolean;
+  success?: boolean;
   symbols: SymbolType;
 }
