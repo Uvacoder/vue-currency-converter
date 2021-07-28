@@ -7,6 +7,7 @@ module.exports = {
     "<rootDir>/src/**/**/*.ts",
     "!<rootDir>/src/**/**/main.ts",
     "!<rootDir>/src/**/**/index.ts",
+    "!<rootDir>/src/**/**/vue-apollo-client.ts",
     "!**/node_modules/**",
   ],
   coverageThreshold: {
