@@ -1,36 +1,20 @@
 <template>
-  <div class="flex justify-center">
-    <CurrencyConverter
-      v-if="symbols && currencyValue"
-      :symbols="symbols"
-      :currencyValue="currencyValue"
-    />
+  <div class="flex flex-col">
+    <ExchangeHostConverter class="mb-6" />
+    <SwopGraphqlConverter />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import CurrencyConverter from "@/components/currency-converter.vue";
-import { ExchangeRateHostAPI } from "@/data";
-import { Latest, SymbolType } from "@/domain";
+import ExchangeHostConverter from "@/components/exchange-host-converter.vue";
+import SwopGraphqlConverter from "@/components/swop-graphql-converter.vue";
 
 @Component({
   components: {
-    CurrencyConverter,
+    ExchangeHostConverter,
+    SwopGraphqlConverter,
   },
 })
-export default class Home extends Vue {
-  symbols: SymbolType | null = null;
-  currencyValue: Latest | null = null;
-
-  created(): void {
-    ExchangeRateHostAPI.getSymbols().then((r) => {
-      this.symbols = r.data.symbols;
-    });
-
-    ExchangeRateHostAPI.getLatest().then((r) => {
-      this.currencyValue = r.data;
-    });
-  }
-}
+export default class Home extends Vue {}
 </script>
