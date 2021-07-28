@@ -1,6 +1,7 @@
 <template>
   <CurrencyConverter
     v-if="symbols && currencyValue"
+    apiOriginName="ExchangeRate Host"
     :symbols="symbols"
     :currencyValue="currencyValue"
   />

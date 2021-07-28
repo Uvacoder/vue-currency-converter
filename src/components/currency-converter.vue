@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="shadow bg-white p-8">
+    <h1 class="pb-2">{{ apiOriginName }}</h1>
     <CurrencySelector
       class="my-2"
       :amount="originAmount"
@@ -32,6 +33,7 @@ import { RateService } from "@/services";
   },
 })
 export default class CurrencyConverter extends Vue {
+  @Prop() apiOriginName!: string;
   @Prop() symbols!: SymbolType;
   @Prop() currencyValue!: Latest;
 
