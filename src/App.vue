@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <main>
-      <div class="lg:container lg:mx-auto py-16 px-3">
-        <router-view />
-      </div>
+    <main class="lg:container lg:mx-auto py-8 px-3">
+      <router-view />
     </main>
   </div>
 </template>
